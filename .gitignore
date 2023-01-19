@@ -1,0 +1,34 @@
+.temp
+.DS_Store
+**/target/
+**/out/
+**/build/
+**/bin/
+*.swp
+node_modules
+_book
+.gradle/
+.project
+.classpath
+classes/
+generated/
+libs/
+jars/
+bin/
+embedmysql/
+.settings/
+
+# IntelliJ
+# Here we ignore everything and create exceptions for what we want to share.
+*/out/
+*.iml
+.idea/*
+!.idea/codeStyles
+!.idea/runConfigurations
+!.idea/icon.png
+!.idea/checkstyle-idea.xml
+# END OF IntelliJ
+
+#Gradle stuff (from https://github.com/github/gitignore/blob/master/Gradle.gitignore)
+.gradle
+/build/
