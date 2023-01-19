@@ -46,47 +46,6 @@ public class DataCreator {
         rewrite(outLocation11, outLocation11BadRewrite);
     }
 
-    private void addArray(final StringBuilder sb,
-                          final String parentId,
-                          final int depth,
-                          final int maxDepth) {
-        sb.append("[");
-        for (int i = 0; i < 100; i++) {
-            sb.append("\n");
-            addObject(sb, parentId + "_" + i, depth, maxDepth);
-            sb.append(",");
-        }
-        // Strip last comma.
-        sb.setLength(sb.length() - 1);
-
-        sb.append("\n]");
-    }
-
-    private void addObject(final StringBuilder sb,
-                           final String id,
-                           final int depth,
-                           final int maxDepth) {
-        sb.append("{");
-        sb.append("\"key_");
-        sb.append(id);
-        sb.append("\": ");
-
-        if (depth < maxDepth) {
-            addArray(sb, id, depth + 1, maxDepth);
-        } else {
-            addValue(sb, id);
-        }
-
-        sb.append("}");
-    }
-
-    private void addValue(final StringBuilder sb,
-                          final String id) {
-        sb.append("\"value_");
-        sb.append(id);
-        sb.append("\"");
-    }
-
     private void writeFull(final Writer writer,
                            final String json,
                            final String xmlVersion) throws Exception {
